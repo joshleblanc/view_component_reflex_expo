@@ -20,6 +20,10 @@ class AppComponent < ViewComponentReflex::Component
       "local_state" => {
         label: "Local State",
         component: LocalStateComponent
+      },
+      "loaders" => {
+        label: "Loaders",
+        component: LoaderComponent
       }
     }
   end

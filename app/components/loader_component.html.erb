@@ -1,0 +1,13 @@
+<%= render(ExpoPageComponent.new(
+    title: "Loaders",
+    component: "expensive"
+)) do |component| %>
+  <%= component.with :subtitle do %>
+    You can re-render the page at any point during a reflex, useful for loading indicators and counters.
+  <% end %>
+  <div class="columns">
+    <div class="column">
+      <%= render(ExpensiveComponent.new) %>
+    </div>
+  </div>
+<% end %>
