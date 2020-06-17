@@ -1,6 +1,6 @@
 class AppComponent < ViewComponentReflex::Component
   def initialize
-    @location = :index
+    @location = "index"
   end
 
   def navigate
@@ -8,17 +8,19 @@ class AppComponent < ViewComponentReflex::Component
   end
 
   def component
-    case @location
-    when "local_state"
-      LocalStateComponent.new
-    else
-      IndexPageComponent.new
-    end
+    components[@location][:component].new
   end
 
   def components
-    [
-      { to: "local_state", label: "Local State" }
-    ]
+    {
+      "index" => {
+        label: "Index",
+        component: IndexPageComponent
+      },
+      "local_state" => {
+        label: "Local State",
+        component: LocalStateComponent
+      }
+    }
   end
 end
