@@ -1,8 +1,10 @@
 <%= render(ExpoPageComponent.new(
     title: "Local state",
-    subtitle: "Every ViewComponentReflex component maintains its own local state",
     component: "counter"
-)) do %>
+)) do |component| %>
+  <% component.with(:subtitle) do %>
+    Every ViewComponentReflex component maintains its own local state
+  <% end %>
   <div class="columns">
     <div class="column">
       <%= render(CounterComponent.new) %>

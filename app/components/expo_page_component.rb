@@ -1,7 +1,8 @@
 class ExpoPageComponent < ViewComponent::Base
-  def initialize(title:, subtitle:, component:)
+  with_content_areas :subtitle
+
+  def initialize(title:, component:)
     @title = title
-    @subtitle = subtitle
     @component = component
   end
 end
