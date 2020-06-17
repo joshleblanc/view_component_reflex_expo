@@ -1,0 +1,25 @@
+<h1 class="title">
+  Local state
+</h1>
+<p class="subtitle">
+  Every ViewComponentReflex component maintains its own local state.
+</p>
+
+<div class="columns">
+  <div class="column">
+    <%= render(TestComponent.new) %>
+  </div>
+  <div class="column">
+    <%= render(TestComponent.new) %>
+  </div>
+</div>
+
+<pre>
+# app/components/test_component.rb
+<%= File.read(File.join(Rails.root, "app/components/test_component.rb")).strip %>
+</pre>
+<br>
+<pre>
+# app/components/test_component.html.erb
+<%= File.read(File.join(Rails.root, "app/components/test_component.html.erb")).strip %>
+</pre>
