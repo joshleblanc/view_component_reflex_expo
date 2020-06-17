@@ -1,23 +1,25 @@
-<section class="section">
-  <div class="container is-fluid">
-    <div class="columns">
-      <div class="column is-3">
-        <aside class="menu">
-          <p class="menu-label">Components</p>
-          <ul class="menu-list">
-            <% components.each do |k, v| %>
-              <li data-reflex="click->AppComponentReflex#navigate" data-to="<%= k %>" data-key="<%= key %>">
-                <a class="<%= @location == k && "is-active" %>"><%= v[:label] %></a>
-              </li>
-            <% end %>
-          </ul>
-        </aside>
+<div data-controller="app" data-key="<%= key %>">
+  <section class="section">
+    <div class="container is-fluid">
+      <div class="columns">
+        <div class="column is-3">
+          <aside class="menu">
+            <p class="menu-label">Components</p>
+            <ul class="menu-list">
+              <% components.each do |k, v| %>
+                <li data-reflex="click->AppComponentReflex#navigate" data-to="<%= k %>" data-key="<%= key %>">
+                  <a class="<%= @location == k && "is-active" %>"><%= v[:label] %></a>
+                </li>
+              <% end %>
+            </ul>
+          </aside>
 
+        </div>
+        <div class="column">
+          <%= render(component) %>
+        </div>
       </div>
-      <div class="column">
-        <%= render(component) %>
-      </div>
+
     </div>
-
-  </div>
-</section>
+  </section>
+</div>
