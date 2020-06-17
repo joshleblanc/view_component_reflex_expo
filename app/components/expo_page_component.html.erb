@@ -1,0 +1,18 @@
+<h1 class="title">
+  <%= @title %>
+</h1>
+<p class="subtitle">
+  <%= @subtitle %>
+</p>
+
+<%= content %>
+
+<pre>
+<%= "# app/components/#{@component}_component.rb" %>
+<%= File.read(File.join(Rails.root, "app/components/#{@component}_component.rb")).strip %>
+</pre>
+<br>
+<pre>
+<%= "# app/components/#{@component}_component.html.erb" %>
+<%= File.read(File.join(Rails.root, "app/components/#{@component}_component.html.erb")).strip %>
+</pre>

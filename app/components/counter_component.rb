@@ -1,4 +1,4 @@
-class TestComponent < ViewComponentReflex::Component
+class CounterComponent < ViewComponentReflex::Component
   def initialize
     @count = 0
   end

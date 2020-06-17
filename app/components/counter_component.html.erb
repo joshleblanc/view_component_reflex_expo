@@ -1,5 +1,4 @@
 <div data-controller="test" data-key="<%= key %>">
   <p><%= @count %></p>
   <button type="button" data-reflex="click->TestComponentReflex#test" data-key="<%= key %>">Click Me!</button>
-  <%= render(EchoComponent.new(input: @count)) %>
 </div>

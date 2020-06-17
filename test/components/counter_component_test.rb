@@ -1,6 +1,6 @@
 require "test_helper"
 
-class TestComponentTest < ViewComponent::TestCase
+class CounterComponentTest < ViewComponent::TestCase
   test "component renders something useful" do
     # assert_equal(
     #   %(<span>Hello, components!</span>),
