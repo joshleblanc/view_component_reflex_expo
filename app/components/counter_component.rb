@@ -3,7 +3,7 @@ class CounterComponent < ViewComponentReflex::Component
     @count = 0
   end
 
-  def test
+  def increment
     @count += 1
   end
 end
