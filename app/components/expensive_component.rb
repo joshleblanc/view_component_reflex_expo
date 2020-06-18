@@ -5,6 +5,8 @@ class ExpensiveComponent < ViewComponentReflex::Component
   end
 
   def execute
+    return if @loading
+
     @counter = 3
     @loading = true
     refresh!
