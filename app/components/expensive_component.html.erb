@@ -1,4 +1,4 @@
-<div data-controller="expensive" data-key="<%= key %>">
+<%= component_controller do %>
   <button type="button" data-key="<%= key %>" data-reflex="click->ExpensiveComponentReflex#execute">Perform long running action!</button>
   <% if @loading %>
     <p>Executing...</p>
@@ -8,4 +8,4 @@
   <% else %>
     <p>Waiting...</p>
   <% end %>
-</div>
+<% end %>
