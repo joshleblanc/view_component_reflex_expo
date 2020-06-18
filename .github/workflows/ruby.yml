@@ -28,7 +28,7 @@ jobs:
       - name: Login to registry
         run: docker login docker.pkg.github.com --username joshleblanc --password ${{ secrets.githubToken }}
       - name: Publish
-        run: docker push docker.pkg.github.com/joshleblanc/sc2overwatch/sc2overwatch
+        run: docker push docker.pkg.github.com/joshleblanc/view_component_reflex_expo/view_component_reflex_expo
       - name: Setup kubectl
         uses: matootie/dokube@v1.2.0
         with:
