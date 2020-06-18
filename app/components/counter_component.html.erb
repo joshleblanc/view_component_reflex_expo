@@ -1,4 +1,4 @@
-<div data-controller="counter" data-key="<%= key %>">
+<%= component_controller do %>
   <p><strong>Current count:</strong> <%= @count %></p>
   <button type="button" data-reflex="click->CounterComponentReflex#increment" data-key="<%= key %>">Click Me!</button>
-</div>
+<% end %>
