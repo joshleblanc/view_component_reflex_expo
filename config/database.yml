@@ -78,10 +78,8 @@ test:
 # You can use this database configuration with:
 #
 #   production:
-#     url: <%= ENV['DATABASE_URL'] %>
+#     url:
 #
 production:
   <<: *default
-  database: view_component_reflex_expo_production
-  username: view_component_reflex_expo
-  password: <%= ENV['VIEW_COMPONENT_REFLEX_EXPO_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
