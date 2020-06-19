@@ -2,7 +2,6 @@
 
 class TodosComponent < ViewComponentReflex::Component
   def initialize
-    @current_todo = Todo.new(name: '', completed: false)
     @filter = 'All'
   end
 
@@ -63,37 +62,13 @@ class TodosComponent < ViewComponentReflex::Component
     end
   end
 
-  def todo_name(todo)
-    classes = %w[is-size-5]
-    classes.push 'completed' if todo.completed?
-    tag.p(class: classes.join(' ')) do
-      todo.name
-    end
-  end
-
   # reflexes
 
   def filter
     @filter = element.dataset[:filter]
   end
 
-  def handle_name_change
-    @current_todo.name = element.value
-  end
-
   def clear
     completed_todos.destroy_all
-  end
-
-  def toggle_completed
-    todo = Todo.find_by(id: element.dataset[:id], session_id: request.session.id.to_s)
-    todo.completed = !todo.completed
-    todo.save
-  end
-
-  def add
-    @current_todo.session_id = request.session.id.to_s
-    @current_todo.save
-    @current_todo = Todo.new(name: '', completed: false)
   end
 end

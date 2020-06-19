@@ -1,0 +1,58 @@
+<%= component_controller(class: "level") do %>
+  <div class="level-left  is-expanded">
+    <div class="level-item">
+      <label class="checkbox">
+        <%= tag.input(
+                type: "checkbox",
+                data: {
+                    reflex: "click->TodoComponentReflex#toggle_completed",
+                    key: key
+                },
+                checked: @todo.completed
+            )
+        %>
+      </label>
+    </div>
+    <div class="level-item">
+      <% if @editing %>
+        <div class="field has-addons mb-0">
+          <div class="control is-expanded">
+            <input class="input is-rounded" value="<%= @todo.name %>" data-reflex="input->TodoComponentReflex#handle_name_change" data-key="<%= key %>">
+          </div>
+          <div class="control">
+            <button type="button" class="button is-info is-rounded" data-reflex="click->TodoComponentReflex#commit_edit" data-key="<%= key %>">
+              <span class="icon">
+                <i class="fas fa-save"></i>
+              </span>
+            </button>
+          </div>
+          <div class="control">
+            <button type="button" class="button" data-reflex="click->TodoComponentReflex#end_edit" data-key="<%= key %>">
+              <span class="icon">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+      <% else %>
+        <%= todo_name(@todo) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="level-right">
+    <div class="level-item">
+      <div class="buttons has-addons">
+        <button class="button is-info" data-reflex="click->TodoComponentReflex#begin_edit" data-key="<%= key %>">
+          <span class="icon">
+            <i class="fas fa-edit"></i>
+          </span>
+        </button>
+        <button class="button is-danger">
+          <span class="icon">
+            <i class="fas fa-trash"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+<% end %>

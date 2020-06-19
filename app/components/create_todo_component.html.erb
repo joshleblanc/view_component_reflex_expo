@@ -1,0 +1,25 @@
+<%= component_controller class: "box" do %>
+  <form data-reflex="submit->CreateTodoComponentReflex#add" data-key="<%= key %>">
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input
+          type="text"
+          class="input is-rounded"
+          placeholder="What needs to be done?"
+          data-reflex="input->CreateTodoComponentReflex#handle_name_change"
+          data-key="<%= key %>"
+          name="name"
+          value="<%= @todo.name %>"
+        >
+      </div>
+      <div class="control">
+        <%= tag.button(
+                'Add',
+                type: "submit",
+                class: "button is-info",
+                disabled: @todo.name.empty?
+            ) %>
+      </div>
+    </div>
+  </form>
+<% end %>

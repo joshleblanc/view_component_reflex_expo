@@ -1,28 +1,5 @@
 <%= component_controller do %>
-  <div class="box">
-    <form data-reflex="submit->TodosComponentReflex#add" data-key="<%= key %>">
-      <div class="field has-addons">
-        <div class="control is-expanded">
-          <input
-            type="text"
-            class="input is-rounded"
-            placeholder="What needs to be done?"
-            data-reflex="input->TodosComponentReflex#handle_name_change"
-            data-key="<%= key %>"
-            name="name"
-            value="<%= @current_todo.name %>"
-          >
-        </div>
-        <div class="control">
-          <%= tag.button('Add',
-              type: "submit",
-              class: "button is-info",
-              disabled: @current_todo.name.empty?
-          ) %>
-        </div>
-      </div>
-    </form>
-  </div>
+  <%= render(CreateTodoComponent.new) %>
   <div class="box todo-list">
     <% if filtered_todos.empty? %>
       <div class="level">
@@ -30,35 +7,10 @@
           <p class="is-size-6">
             <%= no_todos_text %>
           </p>
-
         </div>
       </div>
     <% end %>
-    <% filtered_todos.each do |todo| %>
-      <div class="level">
-        <div class="level-left">
-          <div class="level-item">
-            <%= todo_name(todo) %>
-          </div>
-        </div>
-        <div class="level-right">
-          <div class="level-item">
-            <label class="checkbox">
-              <%= tag.input(
-                      type: "checkbox",
-                      data: {
-                          reflex: "click->TodosComponentReflex#toggle_completed",
-                          key: key,
-                          id: todo.id
-                      },
-                      checked: todo.completed
-                  )
-              %>
-            </label>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <%= render(TodoComponent.with_collection(filtered_todos)) %>
     <div class="level todo-info">
       <div class="level-left">
         <div class="level-item">
@@ -84,5 +36,4 @@
       </div>
     </div>
   </div>
-
 <% end %>
