@@ -29,7 +29,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="view_component_reflex (v1.0.1) [path][gem]" type="rubylib">
+      <library name="view_component_reflex (v1.1.0) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
         </properties>
