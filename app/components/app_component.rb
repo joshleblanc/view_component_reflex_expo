@@ -24,6 +24,10 @@ class AppComponent < ViewComponentReflex::Component
       "loaders" => {
         label: "Loaders",
         component: LoaderComponent
+      },
+      "todo" => {
+        label: "Todos",
+        component: TodoPageComponent
       }
     }
   end

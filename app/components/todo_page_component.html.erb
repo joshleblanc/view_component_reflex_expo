@@ -1,0 +1,14 @@
+<%= render(ExpoPageComponent.new(
+        title: "Todo",
+        component: "todos"
+)) do |component| %>
+  <%= component.with :subtitle do %>
+    I feel like you can't have a component demo page without a random todo app included...
+    So here it is!
+  <% end %>
+  <div class="columns">
+    <div class="column">
+      <%= render(TodosComponent.new) %>
+    </div>
+  </div>
+<% end %>
