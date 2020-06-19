@@ -17,6 +17,11 @@ class TodoComponent < ViewComponentReflex::Component
     end_edit
   end
 
+  def delete
+    @todo.destroy
+    refresh! '.todo-list'
+  end
+
   def handle_name_change
     @todo.name = element.value
   end
