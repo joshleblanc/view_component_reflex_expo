@@ -48,6 +48,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "stimulus_reflex", "~> 3.2"
-gem "view_component_reflex", "~> 1.0.0"
+gem "view_component_reflex", "1.1.0"
 
 gem "view_component", "~> 2.9"
