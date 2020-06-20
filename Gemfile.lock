@@ -176,7 +176,7 @@ GEM
       tzinfo (>= 1.0.0)
     view_component (2.11.1)
       activesupport (>= 5.0.0, < 7.0)
-    view_component_reflex (1.1.1)
+    view_component_reflex (1.2.0)
       rails (~> 6.0.3, >= 6.0.3.1)
       stimulus_reflex
       view_component
@@ -218,7 +218,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   view_component (~> 2.9)
-  view_component_reflex (= 1.1.1)
+  view_component_reflex (= 1.2.0)
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
