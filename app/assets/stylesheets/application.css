@@ -22,3 +22,7 @@
 .todo-list p {
     transition: color 0.4s
 }
+
+pre {
+    overflow-x: scroll;
+}

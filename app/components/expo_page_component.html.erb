@@ -1,18 +1,23 @@
-<h1 class="title">
-  <%= @title %>
-</h1>
-<p class="subtitle">
-  <%= @subtitle %>
-</p>
+<%= component_controller do %>
+  <h1 class="title">
+    <%= @title %>
+  </h1>
+  <p class="subtitle">
+    <%= @subtitle %>
+  </p>
 
-<%= content %>
+  <%= content %>
 
-<pre>
-<%= "# app/components/#{@component}_component.rb" %>
-<%= File.read(File.join(Rails.root, "app/components/#{@component}_component.rb")).strip %>
-</pre>
-<br>
-<pre>
-<%= "# app/components/#{@component}_component.html.erb" %>
-<%= File.read(File.join(Rails.root, "app/components/#{@component}_component.html.erb")).strip %>
-</pre>
+  <div class="tabs">
+    <ul>
+      <% @components.each do |component| %>
+        <li class="<%= component_class(component) %>" data-reflex="click->ExpoPageComponentReflex#select_component" data-key="<%= key %>" data-component="<%= component %>">
+          <a>
+            <%= component.humanize %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%= render(ExampleCodeComponent.with_collection(@components, selected: @selected_component)) %>
+<% end %>
