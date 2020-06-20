@@ -3,6 +3,15 @@ class CreateTodoComponent < ViewComponentReflex::Component
     @todo = new_todo
   end
 
+  def permit_parameter?(initial_param, new_param)
+    if initial_param.instance_of? Todo
+      false
+    else
+      super
+    end
+  end
+
+
   def new_todo
     Todo.new(name: '', completed: false)
   end
