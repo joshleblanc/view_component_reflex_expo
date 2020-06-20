@@ -1,18 +1,39 @@
-<div class="columns">
-  <div class="column is-6">
-    <p class="title is-6">
-      <%= component_file_path %>
-    </p>
-    <%= render(SyntaxHighlighterComponent.new(lexer: :ruby)) do %>
-      <%= component_code %>
-    <% end %>
+<%= component_controller do %>
+  <div class="tabs">
+    <ul>
+      <% tabs.each do |tab| %>
+        <li class="<%= tab == @tab ? "is-active" : "" %>">
+          <a data-reflex="click->ExampleCodeComponent#select_tab" data-key=<%= key %> data-tab="<%= tab %>"><%= tab %></a>
+        </li>
+      <% end %>
+    </ul>
   </div>
-  <div class="column is-6">
-    <p class="title is-6">
-      <%= erb_file_path %>
-    </p>
-    <%= render(SyntaxHighlighterComponent.new(lexer: :erb)) do %>
-      <%= erb_code %>
-    <% end %>
+
+  <div class="columns">
+    <div class="column is-12">
+      <% if @tab == "Component" %>
+        <p class="title is-6">
+          <%= component_file_path %>
+        </p>
+        <%= render(SyntaxHighlighterComponent.new(lexer: :ruby)) do %>
+          <%= component_code %>
+        <% end %>
+      <% elsif @tab == "Template" %>
+        <p class="title is-6">
+          <%= erb_file_path %>
+        </p>
+        <%= render(SyntaxHighlighterComponent.new(lexer: :erb)) do %>
+          <%= erb_code %>
+        <% end %>
+      <% else %>
+        <p class="title is-6">
+          <%= stimulus_controller_file_path %>
+        </p>
+        <%= render(SyntaxHighlighterComponent.new(lexer: :js)) do %>
+          <%= stimulus_controller_code %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
+

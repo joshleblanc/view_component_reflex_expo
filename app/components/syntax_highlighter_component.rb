@@ -11,6 +11,10 @@ class SyntaxHighlighterComponent < ViewComponent::Base
     def ruby_lexer
       @ruby_lexer ||= Rouge::Lexers::Ruby.new
     end
+
+    def js_lexer
+      @js_lexer ||= Rouge::Lexers::Javascript.new
+    end
   end
 
   def initialize(lexer: :ruby)
@@ -20,6 +24,8 @@ class SyntaxHighlighterComponent < ViewComponent::Base
   def lexer
     if @lexer == :ruby
       SyntaxHighlighterComponent.ruby_lexer
+    elsif @lexer == :js
+      SyntaxHighlighterComponent.js_lexer
     else
       SyntaxHighlighterComponent.erb_lexer
     end
