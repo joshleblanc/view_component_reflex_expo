@@ -1,10 +1,16 @@
 <div class="columns">
   <div class="column is-6">
+    <p class="title is-6">
+      <%= component_file_path %>
+    </p>
     <%= render(SyntaxHighlighterComponent.new(lexer: :ruby)) do %>
       <%= component_code %>
     <% end %>
   </div>
   <div class="column is-6">
+    <p class="title is-6">
+      <%= erb_file_path %>
+    </p>
     <%= render(SyntaxHighlighterComponent.new(lexer: :erb)) do %>
       <%= erb_code %>
     <% end %>
