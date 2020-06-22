@@ -48,7 +48,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "stimulus_reflex", "~> 3.2"
-gem "view_component_reflex", "1.2.0"
+gem "view_component_reflex", path: "C:/Users/horiz/RubymineProjects/view_component_reflex"
 
 gem "view_component", "~> 2.9"
 

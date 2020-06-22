@@ -1,9 +1,4 @@
 <%= component_controller do %>
   <p><strong>Current count:</strong> <%= @count %></p>
-  <button
-    class="button is-primary"
-    type="button"
-    data-reflex="click->CounterComponentReflex#increment"
-    data-key="<%= key %>"
-  >Click Me!</button>
+  <%= reflex_tag "mouseenter->increment", :button, "Click Me", class: "button is-primary", type: "button" %>
 <% end %>
