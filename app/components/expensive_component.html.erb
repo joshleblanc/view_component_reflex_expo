@@ -1,10 +1,11 @@
 <%= component_controller do %>
-  <button
-      class="button is-primary"
-      type="button"
-      data-key="<%= key %>"
-      data-reflex="click->ExpensiveComponentReflex#execute"
-  >Perform long running action!</button>
+  <%= reflex_tag(
+          :execute,
+          :button,
+          "Perform long running action!",
+          class: "button is-primary",
+          type: "button"
+      ) %>
   <% if @loading %>
     <p>Executing...</p>
     <p>

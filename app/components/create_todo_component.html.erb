@@ -2,14 +2,14 @@
   <form data-action="submit->create-todo#add" data-key="<%= key %>">
     <div class="field has-addons">
       <div class="control is-expanded">
-        <input
-          type="text"
-          class="input is-rounded"
-          placeholder="What needs to be done?"
-          data-reflex="input->CreateTodoComponentReflex#handle_name_change"
-          data-key="<%= key %>"
-          name="name"
-        >
+        <%= reflex_tag(
+                "input->handle_name_change",
+                :input,
+                nil,
+                class: "input is-rounded",
+                placeholder: "What needs to be done?",
+                name: "name"
+            ) %>
       </div>
       <div class="control">
         <%= tag.button(

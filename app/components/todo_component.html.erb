@@ -2,36 +2,28 @@
   <div class="level-left  is-expanded">
     <div class="level-item">
       <label class="checkbox">
-        <%= tag.input(
-                type: "checkbox",
-                data: {
-                    reflex: "click->TodoComponentReflex#toggle_completed",
-                    key: key
-                },
-                checked: @todo.completed
-            )
-        %>
+        <%= reflex_tag :toggle_completed, :input, nil, type: "checkbox", checked: @todo.completed %>
       </label>
     </div>
     <div class="level-item">
       <% if @editing %>
         <div class="field has-addons mb-0">
           <div class="control is-expanded">
-            <input class="input is-rounded" value="<%= @todo.name %>" data-reflex="input->TodoComponentReflex#handle_name_change" data-key="<%= key %>">
+            <%= reflex_tag "input->handle_name_change", :input, nil, value: @todo.name, class: "input is-rounded" %>
           </div>
           <div class="control">
-            <button type="button" class="button is-info is-rounded" data-reflex="click->TodoComponentReflex#commit_edit" data-key="<%= key %>">
+            <%= reflex_tag :commit_edit, :button, type: "button", class: "button is-info is-rounded" do %>
               <span class="icon">
                 <i class="fas fa-save"></i>
               </span>
-            </button>
+            <% end %>
           </div>
           <div class="control">
-            <button type="button" class="button" data-reflex="click->TodoComponentReflex#end_edit" data-key="<%= key %>">
+            <%= reflex_tag :end_edit, :button, class: "button", type: "button" do %>
               <span class="icon">
                 <i class="fas fa-times"></i>
               </span>
-            </button>
+            <% end %>
           </div>
         </div>
       <% else %>
@@ -42,16 +34,16 @@
   <div class="level-right">
     <div class="level-item">
       <div class="buttons has-addons">
-        <button class="button is-info" data-reflex="click->TodoComponentReflex#begin_edit" data-key="<%= key %>">
+        <%= reflex_tag :begin_edit, :button, class: "button is-info" do %>
           <span class="icon">
             <i class="fas fa-edit"></i>
           </span>
-        </button>
-        <button class="button is-danger" data-reflex="click->TodoComponentReflex#delete" data-key="<%= key %>">
+        <% end %>
+        <%= reflex_tag :delete, :button, class: "button is-danger" do %>
           <span class="icon">
             <i class="fas fa-trash"></i>
           </span>
-        </button>
+        <% end %>
       </div>
     </div>
   </div>

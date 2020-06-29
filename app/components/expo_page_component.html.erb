@@ -11,11 +11,11 @@
   <div class="tabs">
     <ul>
       <% @components.each do |component| %>
-        <li class="<%= component_class(component) %>" data-reflex="click->ExpoPageComponentReflex#select_component" data-key="<%= key %>" data-component="<%= component %>">
+        <%= reflex_tag :select_component, :li, nil, class: component_class(component), data: { component: component } do %>
           <a>
             <%= component.humanize %>
           </a>
-        </li>
+        <% end %>
       <% end %>
     </ul>
   </div>

@@ -7,9 +7,9 @@
             <p class="menu-label">Components</p>
             <ul class="menu-list">
               <% components.each do |k, v| %>
-                <li data-reflex="click->AppComponentReflex#navigate" data-to="<%= k %>" data-key="<%= key %>">
+                <%= reflex_tag :navigate, :li, data: {to: k} do %>
                   <a class="<%= @location == k && "is-active" %>"><%= v[:label] %></a>
-                </li>
+                <% end %>
               <% end %>
             </ul>
           </aside>

@@ -3,7 +3,7 @@
     <ul>
       <% tabs.each do |tab| %>
         <li class="<%= tab == @tab ? "is-active" : "" %>">
-          <a data-reflex="click->ExampleCodeComponent#select_tab" data-key=<%= key %> data-tab="<%= tab %>"><%= tab %></a>
+          <%= reflex_tag :select_tab, :a, tab, data: { tab: tab } %>
         </li>
       <% end %>
     </ul>
