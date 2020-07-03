@@ -1,4 +1,4 @@
-<%= component_controller do %>
+<%= component_controller class: "d-flex flex-direction-column align-items-center" do %>
   <p><strong>Current count:</strong> <%= @count %></p>
   <%= reflex_tag :increment, :button, "Click Me", class: "button is-primary", type: "button" %>
 <% end %>
