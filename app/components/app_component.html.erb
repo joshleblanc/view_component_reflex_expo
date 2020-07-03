@@ -1,24 +1,19 @@
-<%= component_controller do %>
-  <section class="section">
-    <div class="container is-fluid">
-      <div class="columns">
-        <div class="column is-3">
-          <aside class="menu">
-            <p class="menu-label">Components</p>
-            <ul class="menu-list">
-              <% components.each do |k, v| %>
-                <%= reflex_tag :navigate, :li, data: {to: k} do %>
-                  <a class="<%= @location == k && "is-active" %>"><%= v[:label] %></a>
-                <% end %>
-              <% end %>
-            </ul>
-          </aside>
-
-        </div>
-        <div class="column is-9">
-          <%= render(component) %>
-        </div>
+<section class="section">
+  <div class="container is-fluid">
+    <div class="columns">
+      <div class="column is-3">
+        <aside class="menu">
+          <p class="menu-label">Components</p>
+          <ul class="menu-list">
+            <% components.each do |k, v| %>
+              <%= link_to v[:label], v[:to], class: current_page?(v[:to]) && "is-active" %>
+            <% end %>
+          </ul>
+        </aside>
+      </div>
+      <div class="column is-9">
+        <%= content %>
       </div>
     </div>
-  </section>
-<% end %>
+  </div>
+</section>

@@ -1,37 +1,25 @@
-class AppComponent < ViewComponentReflex::Component
-  def initialize
-    @location = "index"
-  end
-
-  def navigate
-    @location = element.dataset[:to]
-  end
-
-  def component
-    components[@location][:component].new
-  end
-
+class AppComponent < ViewComponent::Base
   def components
     {
       "index" => {
         label: "Index",
-        component: IndexPageComponent
+        to: "/"
       },
       "local_state" => {
         label: "Local State",
-        component: LocalStateComponent
+        to: "/local_state"
       },
       "loaders" => {
         label: "Loaders",
-        component: LoaderComponent
+        to: "/loaders"
       },
       "todo" => {
         label: "Todos",
-        component: TodoPageComponent
+        to: "/todos"
       },
       "table_expo" => {
         label: "Data table",
-        component: TableExpoComponent
+        to: "/data_table"
       }
     }
   end

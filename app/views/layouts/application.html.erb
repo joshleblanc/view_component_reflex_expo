@@ -17,6 +17,8 @@
   </head>
 
   <body>
-    <%= render(AppComponent.new) %>
+    <%= render(AppComponent.new) do %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>
