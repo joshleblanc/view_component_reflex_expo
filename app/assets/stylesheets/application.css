@@ -28,8 +28,13 @@ pre {
 }
 
 .page-sizes {
-    justify-content: space-between;
     margin-top: 3px;
     margin-bottom: 3px;
     display: flex;
+    align-items: center;
+}
+
+.page-size-select {
+    margin-left: 6px;
+    margin-right: 6px;
 }
