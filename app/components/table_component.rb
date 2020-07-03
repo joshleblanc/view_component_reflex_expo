@@ -26,6 +26,7 @@ class TableComponent < ViewComponentReflex::Component
     else
       @filter[element.dataset[:column]] = element.value
     end
+    @page = 0
   end
 
   def count
