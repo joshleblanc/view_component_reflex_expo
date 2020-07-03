@@ -13,7 +13,6 @@ document.addEventListener('cable-ready:before-morph', () => {
 export default class extends ApplicationController {
   static targets = [ "select" ];
   connect() {
-    console.log("Connecting");
     this.selectTarget.classList.add("is-hidden");
     const options = Array.from(this.selectTarget.options).map(option => {
       return {
@@ -21,8 +20,6 @@ export default class extends ApplicationController {
         value: option.value
       }
     });
-
-    console.log(this.clearable);
 
     const select = new Select({
       target: this.element,
@@ -48,7 +45,6 @@ export default class extends ApplicationController {
   }
 
   get value() {
-    console.log(this.data);
     return this.data.get('value');
   }
 
