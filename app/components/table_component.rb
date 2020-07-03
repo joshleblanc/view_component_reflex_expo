@@ -46,10 +46,9 @@ class TableComponent < ViewComponentReflex::Component
   end
 
   def page_options
-    options = pages.times.map do |num|
+    pages.times.map do |num|
       [num.next, num]
     end
-    options_for_select options, @page
   end
 
   def omitted_from_state
