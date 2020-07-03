@@ -1,0 +1,3 @@
+<%= component_controller data: { "select-value": @selected, "select-clearable": @clearable } do %>
+  <%= select_tag @name, options_for_select(@options, @selected), data: @data %>
+<% end %>

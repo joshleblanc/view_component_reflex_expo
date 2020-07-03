@@ -28,6 +28,10 @@ class AppComponent < ViewComponentReflex::Component
       "todo" => {
         label: "Todos",
         component: TodoPageComponent
+      },
+      "table_expo" => {
+        label: "Data table",
+        component: TableExpoComponent
       }
     }
   end

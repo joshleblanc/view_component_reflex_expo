@@ -1,0 +1,105 @@
+<%= component_controller do %>
+  <div class="columns">
+    <div class="column is-3">
+      <div class="page-sizes">
+        Show
+        <%= render(SelectComponent.new(
+            options: page_sizes,
+            selected: @page_size,
+            name: :page_size,
+            clearable: false,
+            data: {
+                key: key,
+                reflex: "change->TableComponent#handle_page_size_change"
+            }
+        )) %>
+        entries
+      </div>
+    </div>
+  </div>
+
+  <table class="table is-striped is-narrow is-bordered is-fullwidth">
+    <thead>
+    <tr>
+      <% @columns.each do |column| %>
+        <th><%= column[:header] %></th>
+      <% end %>
+    </tr>
+    <tr>
+      <% @columns.each do |column| %>
+        <th>
+          <% if column[:type] == :input %>
+            <%= reflex_tag(
+                    "input->handle_filter_change",
+                    :input,
+                    nil,
+                    value: @filter[(column[:column] || column[:accessor]).to_s],
+                    class: "input",
+                    data: {
+                        column: column[:column]
+                    }
+                ) %>
+
+          <% else %>
+            <%= render(SelectComponent.new(
+                name: column[:header],
+                options: @collection.distinct.pluck(column[:accessor]).sort,
+                selected: @filter[(column[:column] || column[:accessor]).to_s],
+                data: {
+                    reflex: "change->TableComponent#handle_filter_change",
+                    key: key,
+                    column: column[:column] || column[:accessor]
+                }
+            )) %>
+          <% end %>
+        </th>
+      <% end %>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% page_rows.each do |model| %>
+      <tr>
+        <% @columns.each do |column| %>
+          <td><%= cell(model, column) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <div class="columns">
+    <div class="column is-3">
+      <p>Displaying <%= offset.next %> to <%= offset + page_rows.count %> of <%= count %></p>
+    </div>
+    <div class="col-4">
+      <ul class="pagination">
+        <%= content_tag :li, class: "page-item #{@page == 0 && 'disabled'}" do %>
+          <%= reflex_tag :prev_page, :button, "Previous", class: "pagination-previous", type: "button" %>
+        <% end %>
+        <li class="column is-3">
+          <%= reflex_tag(
+                  "change->set_page",
+                  :input,
+                  nil,
+                  class: "input",
+                  value: @page + 1,
+                  type: "number",
+                  min: 1,
+                  max: pages
+              ) %>
+        </li>
+
+        <li class="d-flex ml-3 mr-3">
+          / <%= pages %>
+        </li>
+        <%= content_tag :li, class: "page-item #{offset + @page_size >= @collection.count && 'disabled'}" do %>
+          <%= reflex_tag :next_page, :button, "Next", class: "pagination-next", type: "button" %>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-4">
+
+    </div>
+  </div>
+
+<% end %>

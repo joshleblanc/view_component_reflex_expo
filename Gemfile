@@ -53,3 +53,5 @@ gem "view_component_reflex", "1.6.1"
 gem "view_component", "~> 2.9"
 
 gem "rouge", "~> 3.20"
+
+gem "faker", "~> 2.13"

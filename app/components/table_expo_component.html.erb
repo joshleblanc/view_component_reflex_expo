@@ -1,0 +1,13 @@
+<%= render(ExpoPageComponent.new(
+    title: "Table",
+    component: %w(student_table table)
+)) do |component| %>
+  <% component.with(:subtitle) do %>
+    An example of a simple data table
+  <% end %>
+  <div class="columns">
+    <div class="column">
+      <%= render(StudentTableComponent.new) %>
+    </div>
+  </div>
+<% end %>

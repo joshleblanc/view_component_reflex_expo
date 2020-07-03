@@ -26,3 +26,10 @@
 pre {
     overflow-x: scroll;
 }
+
+.page-sizes {
+    justify-content: space-between;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    display: flex;
+}
