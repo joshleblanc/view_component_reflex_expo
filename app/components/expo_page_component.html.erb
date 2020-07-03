@@ -1,10 +1,16 @@
 <%= component_controller do %>
-  <h1 class="title">
-    <%= @title %>
-  </h1>
-  <p class="subtitle">
-    <%= subtitle %>
-  </p>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          <%= @title %>
+        </h1>
+        <p class="subtitle">
+          <%= subtitle %>
+        </p>
+      </div>
+    </div>
+  </section>
 
   <%= content %>
 
