@@ -3,11 +3,13 @@ import Select from 'svelte-select';
 
 // The stimulus controller won't reconnect unless the controller detaches first
 document.addEventListener('cable-ready:before-morph', () => {
-  document
-    .querySelectorAll('[data-controller="select"]')
-    .forEach(element => {
-      element.parentNode.removeChild(element);
-    })
+  const controllers = document.querySelectorAll('[data-controller="select"]');
+  controllers.forEach(element => {
+    const parent = element.parentNode;
+    const children = Array.from(parent.childNodes);
+    const index = children.indexOf(element);
+    parent.insertBefore(element, children[index]);
+  })
 })
 
 export default class extends ApplicationController {
@@ -21,7 +23,7 @@ export default class extends ApplicationController {
       }
     });
 
-    const select = new Select({
+    this.select = new Select({
       target: this.element,
       props: {
         items: options,
@@ -31,17 +33,27 @@ export default class extends ApplicationController {
       }
     });
 
-    select.$on("select", e => {
+
+    this.select.$on("select", e => {
       const event = new Event('change');
       this.selectTarget.value = e.detail.value;
       this.selectTarget.dispatchEvent(event);
     });
 
-    select.$on("clear", e => {
+    this.select.$on("clear", e => {
       const event = new Event('change');
       this.selectTarget.value = "";
       this.selectTarget.dispatchEvent(event);
     })
+  }
+
+  disconnect() {
+    try {
+      this.select.$destroy();
+    } catch(e) {
+
+    }
+
   }
 
   get value() {
