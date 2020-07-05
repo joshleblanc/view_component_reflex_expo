@@ -33,7 +33,6 @@ export default class extends ApplicationController {
       }
     });
 
-
     this.select.$on("select", e => {
       const event = new Event('change');
       this.selectTarget.value = e.detail.value;
@@ -53,7 +52,6 @@ export default class extends ApplicationController {
     } catch(e) {
 
     }
-
   }
 
   get value() {
