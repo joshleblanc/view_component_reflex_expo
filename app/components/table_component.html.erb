@@ -44,7 +44,7 @@
           <% else %>
             <%= render(SelectComponent.new(
                 name: column[:header],
-                options: @collection.distinct.pluck(column[:accessor]).sort,
+                options: filter_options(column[:column] || column[:accessor]),
                 selected: @filter[(column[:column] || column[:accessor]).to_s],
                 data: {
                     reflex: "change->TableComponent#handle_filter_change",

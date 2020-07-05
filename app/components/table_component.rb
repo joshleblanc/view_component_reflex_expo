@@ -20,6 +20,10 @@ class TableComponent < ViewComponentReflex::Component
     end
   end
 
+  def filter_options(accessor)
+    @collection.distinct.order(accessor).pluck(accessor)
+  end
+
   def handle_filter_change
     if element.value.empty?
       @filter.delete element.dataset[:column]
