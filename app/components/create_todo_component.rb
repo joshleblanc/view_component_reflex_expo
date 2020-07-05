@@ -11,7 +11,6 @@ class CreateTodoComponent < ViewComponentReflex::Component
     end
   end
 
-
   def new_todo
     Todo.new(name: '', completed: false)
   end
