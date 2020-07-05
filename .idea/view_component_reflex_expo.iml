@@ -30,7 +30,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="all" level="application" />
     <orderEntry type="module-library">
-      <library name="view_component_reflex (v1.6.1) [path][gem]" type="rubylib">
+      <library name="view_component_reflex (v1.7.0) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
         </properties>
