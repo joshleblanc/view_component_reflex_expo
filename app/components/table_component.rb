@@ -52,10 +52,6 @@ class TableComponent < ViewComponentReflex::Component
     end
   end
 
-  def omitted_from_state
-    [:@columns]
-  end
-
   def offset
     @page_size * @page
   end
