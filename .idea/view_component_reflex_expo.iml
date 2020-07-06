@@ -29,38 +29,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="all" level="application" />
-    <orderEntry type="module-library">
-      <library name="view_component_reflex (v1.7.0) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/app" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/bin" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/lib" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/pkg" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/.git" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/test" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/.idea" />
-        </CLASSES>
-        <SOURCES>
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/app" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/bin" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/lib" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/pkg" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/.git" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/test" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/.idea" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/bin" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/pkg" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/.git" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/test" />
-          <root url="file://$USER_HOME$/RubymineProjects/view_component_reflex/.idea" />
-        </excluded>
-      </library>
-    </orderEntry>
     <orderEntry type="library" scope="PROVIDED" name="actioncable (v6.0.3.2, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v6.0.3.2, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v6.0.3.2, ruby-2.6.5-p114) [gem]" level="application" />
@@ -120,7 +88,7 @@
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v3.142.7, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.0.2, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.2.1, ruby-2.6.5-p114) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="stimulus_reflex (v3.3.0.pre0, ruby-2.6.5-p114) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="stimulus_reflex (v3.2.3, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.0.1, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.6, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.10, ruby-2.6.5-p114) [gem]" level="application" />
@@ -129,6 +97,7 @@
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.7, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo-data (v1.2020.1, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="view_component (v2.13.0, ruby-2.6.5-p114) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="view_component_reflex (v1.7.2, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v4.0.3, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="webdrivers (v4.4.1, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="webpacker (v4.2.2, ruby-2.6.5-p114) [gem]" level="application" />
