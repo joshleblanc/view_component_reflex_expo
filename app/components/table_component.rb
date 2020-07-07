@@ -12,14 +12,6 @@ class TableComponent < ViewComponentReflex::Component
     @filter = {}
   end
 
-  def permit_parameter?(initial_param, new_param)
-    if new_param.is_a? Hash
-      false
-    else
-      super
-    end
-  end
-
   def filter_options(accessor)
     @collection.distinct.order(accessor).pluck(accessor)
   end
