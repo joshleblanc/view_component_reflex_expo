@@ -12,7 +12,7 @@ class CreateTodoComponent < ViewComponentReflex::Component
     @todo.save
     @todo = new_todo
     # Todo list is outside the scope of the component, but we still need to update it
-    refresh! '.todo-list'
+    refresh! '.todo-list', selector
   end
 
   def handle_name_change
