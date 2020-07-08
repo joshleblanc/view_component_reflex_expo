@@ -34,7 +34,7 @@ class TodoComponent < ViewComponentReflex::Component
   def toggle_completed
     @todo.completed = !@todo.completed
     @todo.save
-    refresh! '.todo-info'
+    refresh! '.todo-info', selector
   end
 
   def todo_name(todo)
