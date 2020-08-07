@@ -7,7 +7,7 @@ class CreateTodoComponent < ViewComponentReflex::Component
     Todo.new(name: '', completed: false)
   end
 
-  def add
+  def add(arg)
     @todo.session_id = request.session.id.to_s
     @todo.save
     @todo = new_todo
