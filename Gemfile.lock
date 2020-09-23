@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/joshleblanc/view_component_reflex.git
-  revision: 31cc91bdaecd83982e0bbd4e870c20697bc3782c
+  revision: 259159bd17f3a0d7eceb6c45bf3697f732d5fd7c
   specs:
     view_component_reflex (2.3.3)
       rails (~> 6.0.3, >= 6.0.3.1)
