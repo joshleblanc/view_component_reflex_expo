@@ -46,8 +46,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "view_component_reflex", path: "C:/Users/josh/RubymineProjects/view_component_reflex"
+# gem "view_component_reflex", path: "C:/Users/josh/RubymineProjects/view_component_reflex"
 
-# gem "view_component_reflex"
+gem "view_component_reflex"
 gem "rouge", "~> 3.20"
 gem "faker", "~> 2.13"
