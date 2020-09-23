@@ -1,6 +1,12 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.session_store :cache_store
+  config.session_store :redis_store,
+    servers: ["redis://localhost:6379/0/session"],
+    expire_after: 90.minutes,
+    key: "_#{Rails.application.class.parent_name.downcase}_session",
+    threadsafe: true,
+    signed: true,
+    secure: true
 
   # Code is not reloaded between requests.
   config.cache_classes = true
