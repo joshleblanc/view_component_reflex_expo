@@ -12,6 +12,14 @@ class TableComponent < ViewComponentReflex::Component
     @filter = {}
   end
 
+  def omitted_from_state
+    [:@columns]
+  end
+
+  def permit_parameter?(initial_param, new_param)
+    initial_param.is_a? Array
+  end
+
   def filter_options(accessor)
     @collection.distinct.order(accessor).pluck(accessor)
   end
