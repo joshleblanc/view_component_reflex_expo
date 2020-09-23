@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/joshleblanc/view_component_reflex.git
+  revision: 3c3445b1d35785041529e2bfab52f4b65ea91f2b
+  specs:
+    view_component_reflex (2.3.3)
+      rails (~> 6.0.3, >= 6.0.3.1)
+      stimulus_reflex (~> 3.3.0)
+      view_component
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -203,10 +212,6 @@ GEM
       tzinfo (>= 1.0.0)
     view_component (2.19.1)
       activesupport (>= 5.0.0, < 7.0)
-    view_component_reflex (2.3.3)
-      rails (~> 6.0.3, >= 6.0.3.1)
-      stimulus_reflex (~> 3.3.0)
-      view_component
     web-console (4.0.4)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -247,7 +252,7 @@ DEPENDENCIES
   selenium-webdriver
   turbolinks (~> 5)
   tzinfo-data
-  view_component_reflex
+  view_component_reflex!
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
