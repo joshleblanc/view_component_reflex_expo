@@ -1,11 +1,12 @@
 GIT
   remote: https://github.com/joshleblanc/view_component_reflex.git
-  revision: 4c64b10519cd6cf0a34bbfad1317d5bc7c393503
+  revision: d8439447747a17a81c188beca5acc6d49565a40b
   specs:
     view_component_reflex (2.3.3)
       rails (~> 6.0.3, >= 6.0.3.1)
       stimulus_reflex (~> 3.3.0)
       view_component
+      xxhash
 
 GEM
   remote: https://rubygems.org/
@@ -230,6 +231,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    xxhash (0.4.0)
     zeitwerk (2.4.0)
 
 PLATFORMS
