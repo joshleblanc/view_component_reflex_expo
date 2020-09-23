@@ -17,7 +17,11 @@ class TableComponent < ViewComponentReflex::Component
   end
 
   def permit_parameter?(initial_param, new_param)
-    initial_param.is_a? Array
+    if initial_param.is_a? Hash
+      false
+    else
+      super
+    end
   end
 
   def filter_options(accessor)
