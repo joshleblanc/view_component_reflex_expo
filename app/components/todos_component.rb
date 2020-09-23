@@ -41,6 +41,7 @@ class TodosComponent < ViewComponentReflex::Component
     tag.div class: 'tags has-addons' do
       buttons.each do |button|
         opts = {
+          id: "#{button}-tag",
           class: "tag #{filter_class(button)}",
           data: {
             reflex: 'click->TodosComponentReflex#filter', filter: button, key: key
