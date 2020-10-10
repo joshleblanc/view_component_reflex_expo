@@ -203,8 +203,8 @@ GEM
       tzinfo (>= 1.0.0)
     view_component (2.19.1)
       activesupport (>= 5.0.0, < 7.0)
-    view_component_reflex (2.3.10)
-      rails (~> 6.0.3, >= 6.0.3.1)
+    view_component_reflex (2.3.13)
+      rails (>= 5.2, < 7.0)
       stimulus_reflex (~> 3.3.0)
       view_component
     web-console (4.0.4)
