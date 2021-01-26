@@ -4,17 +4,23 @@ class ExpensiveComponent < ViewComponentReflex::Component
     @counter = 3
   end
 
+  def do_stuff
+    sleep 1
+    @counter -= 1
+    refresh!
+  end
+
+  def loading=(bool)
+    @loading = bool
+    refresh!
+  end
+
   def execute
     return if @loading
 
     @counter = 3
-    @loading = true
-    refresh!
-    @counter.times do
-      sleep 1
-      @counter -= 1
-      refresh!
-    end
-    @loading = false
+    self.loading = true
+    @counter.times { do_stuff }
+    self.loading = false
   end
 end
