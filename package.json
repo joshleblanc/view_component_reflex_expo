@@ -7,7 +7,8 @@
     "cable_ready": "^4.3.0",
     "stimulus": "^1.1.1",
     "stimulus_reflex": "^3.4.0",
-    "svelte-select": "^3.8.1"
+    "svelte-select": "^3.8.1",
+    "turbolinks": "^5.2.0"
   },
   "version": "0.1.1",
   "devDependencies": {
