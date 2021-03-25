@@ -16,6 +16,10 @@ class TodosComponent < ViewComponentReflex::Component
     end
   end
 
+  def do_nothing
+
+  end
+
   def completed_todos
     todos.where(completed: true)
   end

@@ -10,7 +10,7 @@
         </div>
       </div>
     <% end %>
-    <%= render(TodoComponent.with_collection(filtered_todos)) %>
+    <%= render(TodoComponent.with_collection(filtered_todos, parent_key: key)) %>
     <div class="level todo-info">
       <div class="level-left">
         <div class="level-item">

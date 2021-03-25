@@ -1,3 +1,11 @@
+PATH
+  remote: C:/Users/horiz/RubymineProjects/view_component_reflex
+  specs:
+    view_component_reflex (3.1.8)
+      rails (>= 5.2, < 7.0)
+      stimulus_reflex (>= 3.4.1)
+      view_component
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -206,12 +214,8 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2021.1)
       tzinfo (>= 1.0.0)
-    view_component (2.27.0)
+    view_component (2.28.0)
       activesupport (>= 5.0.0, < 7.0)
-    view_component_reflex (3.1.8)
-      rails (>= 5.2, < 7.0)
-      stimulus_reflex (>= 3.4.1)
-      view_component
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -252,10 +256,10 @@ DEPENDENCIES
   selenium-webdriver
   turbolinks (~> 5)
   tzinfo-data
-  view_component_reflex
+  view_component_reflex!
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
 
 BUNDLED WITH
-   2.1.4
+   2.2.4

@@ -1,7 +1,16 @@
 class TodoComponent < ViewComponentReflex::Component
-  def initialize(todo:)
+  def initialize(todo:, parent_key:)
     @todo = todo
     @editing = false
+    @parent_key = parent_key
+  end
+
+  def permit_parameter?(initial_param, new_param)
+    if new_param.instance_of? Todo
+      true
+    else
+      super
+    end
   end
 
   def collection_key
@@ -32,9 +41,13 @@ class TodoComponent < ViewComponentReflex::Component
   end
 
   def toggle_completed
+    prevent_refresh!
+
     @todo.completed = !@todo.completed
     @todo.save
-    refresh! '.todo-list'
+    # refresh! '.todo-list'
+    #
+    stimulate("TodosComponent#do_nothing", { key: @parent_key })
   end
 
   def todo_name(todo)
