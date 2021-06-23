@@ -48,7 +48,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # gem "view_component_reflex", path: "C:/Users/horiz/RubymineProjects/view_component_reflex"
 
-gem "view_component_reflex", path: "../view_component_reflex"
+#gem "view_component_reflex", path: "../view_component_reflex"
+gem "view_component_reflex", "3.1.13.pre1"
 gem "rouge", "~> 3.20"
 gem "faker", "~> 2.13"
 gem 'redis-rails'
