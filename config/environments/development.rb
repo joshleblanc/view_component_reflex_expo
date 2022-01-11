@@ -3,6 +3,9 @@ Rails.application.configure do
 
   config.session_store :cache_store
   config.hosts << "3000.code.monolith.sh"
+  config.action_cable.allowed_request_origins = [/https:\/\/.+\.githubpreview.dev.*/]
+  config.web_console.permissions = "142.177.0.0/16"
+
   
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
