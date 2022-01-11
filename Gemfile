@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
+gem 'rails', '~> 7.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -48,8 +48,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # gem "view_component_reflex", path: "C:/Users/horiz/RubymineProjects/view_component_reflex"
 
-#gem "view_component_reflex", path: "../view_component_reflex"
-gem "view_component_reflex", "3.1.13.pre1"
+gem "view_component_reflex"
+#gem "view_component_reflex", "3.1.13.pre1"
 gem "rouge", "~> 3.20"
 gem "faker", "~> 2.13"
 gem 'redis-rails'
+gem 'sqlite3'

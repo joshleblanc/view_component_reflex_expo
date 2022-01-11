@@ -4,9 +4,9 @@
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/webpacker": "4.2.2",
-    "cable_ready": "5.0.0-pre1",
+    "cable_ready": "5.0.0-pre8",
     "stimulus": "^1.1.1",
-    "stimulus_reflex": "3.5.0-pre1",
+    "stimulus_reflex": "3.5.0-pre8",
     "svelte-select": "^3.8.1",
     "turbolinks": "^5.2.0"
   },
