@@ -1,5 +1,5 @@
 <%= component_controller class: "box" do %>
-  <form data-action="submit->create-todo#add" data-key="<%= key %>">
+  <form data-action="submit->create-todo#add" data-key="<%= key %>" data-reflex-dataset="*">
     <div class="field has-addons">
       <div class="control is-expanded">
         <%= reflex_tag(

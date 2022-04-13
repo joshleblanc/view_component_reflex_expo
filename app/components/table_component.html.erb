@@ -11,7 +11,8 @@
             class_name: "page-size-select",
             data: {
                 key: key,
-                reflex: "change->TableComponent#handle_page_size_change"
+                reflex: "change->TableComponent#handle_page_size_change",
+                reflex_dataset: "*"
             }
         )) %>
         entries
@@ -37,7 +38,8 @@
                     value: @filter[(column[:column] || column[:accessor]).to_s],
                     class: "input",
                     data: {
-                        column: column[:column]
+                        column: column[:column],
+                        reflex_dataset: "*"
                     }
                 ) %>
 
@@ -49,7 +51,8 @@
                 data: {
                     reflex: "change->TableComponent#handle_filter_change",
                     key: key,
-                    column: column[:column] || column[:accessor]
+                    column: column[:column] || column[:accessor],
+                    reflex_dataset: "*"
                 }
             )) %>
           <% end %>

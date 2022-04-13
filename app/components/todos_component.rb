@@ -44,7 +44,8 @@ class TodosComponent < ViewComponentReflex::Component
           id: "#{button}-tag",
           class: "tag #{filter_class(button)}",
           data: {
-            reflex: 'click->TodosComponentReflex#filter', filter: button, key: key
+            reflex: 'click->TodosComponentReflex#filter', filter: button, key: key,
+            dataset: "*"
           }
         }
         concat tag.a(button, opts)
