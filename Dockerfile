@@ -1,4 +1,7 @@
 FROM ruby:2.7
+
+ARG RAILS_MASTER_KEY
+
 RUN apt-get update -qq && apt-get install -y nodejs npm postgresql-client
 RUN mkdir /myapp
 WORKDIR /myapp
