@@ -29,6 +29,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'sqlite3'
 end
 
 group :development do
@@ -53,4 +54,3 @@ gem "view_component_reflex", "3.1.14.pre.8"
 gem "rouge", "~> 3.20"
 gem "faker", "~> 2.13"
 gem 'redis-rails'
-gem 'sqlite3'
