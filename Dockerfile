@@ -1,4 +1,4 @@
-FROM ruby:2.6
+FROM ruby:2.7
 RUN apt-get update -qq && apt-get install -y nodejs npm postgresql-client
 RUN mkdir /myapp
 WORKDIR /myapp
@@ -25,4 +25,4 @@ ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
 # Start the main process.
-CMD ["rails", "server", "-b", "0.0.0.0", "-p", "8080"]
+CMD ["rails", "server", "-b", "0.0.0.0", "-p", "$PORT"]
