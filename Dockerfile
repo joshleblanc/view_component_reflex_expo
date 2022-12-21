@@ -1,4 +1,4 @@
-FROM ruby:2.7
+FROM ruby:3.1
 
 ARG RAILS_MASTER_KEY
 
