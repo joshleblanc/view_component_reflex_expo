@@ -37,7 +37,7 @@ COPY . .
 RUN bundle exec bootsnap precompile --gemfile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN bundle exec rails assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
 
 # Entrypoint prepares database and starts app on 0.0.0.0:3000 by default,
 # but can also take a rails command, like "console" or "runner" to start instead.
