@@ -47,7 +47,7 @@ class TodosComponent < ViewComponentReflex::Component
             reflex: 'click->TodosComponentReflex#filter', filter: button, key: key
           }
         }
-        concat tag.a(button, opts)
+        concat tag.a(button, **opts)
       end
     end
   end
