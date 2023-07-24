@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ExpoPageComponent < ViewComponentReflex::Component
-  with_content_areas :subtitle
+  renders_one :subtitle
 
   def initialize(title:, component:)
     @title = title
